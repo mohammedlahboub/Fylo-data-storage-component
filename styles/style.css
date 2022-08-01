@@ -164,12 +164,12 @@
         padding: 1em;
         border-radius: 0.7rem 0.7rem  0 0.7rem;
     }
-    .storage--status-out p {
+    .storage--status-out h1 {
         color: var(--clr-neutral-txt);
         text-transform:uppercase;
         font-weight: 700;
     }
-    .storage--status-out p::after {
+    .storage--status-out h1::after {
         content: "";
         position: absolute;
         display: inline-block;
@@ -217,7 +217,7 @@
 
             width: 100%;
         }
-        .storage--status-out p::after {
+        .storage--status-out h1::after {
             content: none;}
         
         .storage--status-out{

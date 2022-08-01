@@ -1,0 +1,233 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    font-size: 16px;
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  img, picture, video, canvas, svg {
+      display: block;
+      max-width: 100%;
+    }
+    /* ################################################### */
+    :root{
+        --clr-body-bg:#87ffff;
+        --clr-card-bg:#f15bb5;
+        --clr-icons:#e4eef8;
+        --clr-slider-bg:linear-gradient(90deg,#fff,#f72585);
+        --clr-neutral-txt:hsl(229, 7%, 55%);
+        --clr-primary-txt:#fff;
+        --f-s-primary:14px;
+        
+    }
+    /* ################################################### */
+    
+    body{
+        background-image: url(../images/wave.svg) ;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: 'Raleway', sans-serif;
+        width: 100vw;
+        height: 100vh;
+        /* background-color: aqua; */
+        background-color: var(--clr-body-bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .fylo--card{
+        margin: 1rem;
+        display: flex;
+        gap: 2rem;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+   
+    .fylo--section{
+        background-color: var(--clr-card-bg);
+        padding: 2.5rem;
+
+    }
+    @keyframes fadein {
+        0%{
+            opacity: 0;
+            transform: translateX(-100em);
+        }
+        50%{
+            opacity: 0;
+        }
+        
+    }
+    .fylo--upload-section{
+        padding-right:8rem;
+        display: grid;
+        row-gap: 2rem;
+        column-gap: 1em;
+        grid-template-columns: repeat(1, 1fr);
+        animation: fadein 1.2s   forwards ease-in-out;
+        border-radius: 0.7em 5.5em 0.7em 0.7em;
+    }
+    
+    .icon--container{
+        /* grid-column: span 3; */
+        display: flex;
+        gap: 1em    ;
+        align-items: center;
+    }
+    .icon{
+        cursor: pointer;
+        background-color: var(--clr-icons);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3em;
+        height: 3em;
+        border-radius: 0.5em;
+    }
+    .fylo--status-section{
+        position: relative;
+        width: 35rem;
+        display: flex;
+        justify-content: flex-start;
+        gap: 0.6rem;
+        font-size: var(--f-s-primary);
+        color: var(--clr-primary-txt);
+        display: flex;
+        flex-direction: column;
+        animation: fss 1.2s   forwards ease-in-out;
+        border-radius: 0.7em
+    }
+    @keyframes fss {
+        0%{
+            opacity: 0;
+            transform: translatey(-100em);
+        }
+        50%{
+            opacity: 0;
+        }
+        
+    }
+    .status--storage{
+        font-weight: 600;
+    }
+    .status--storage span{
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #000;
+    }
+    .storage--slider-container{
+        width: 100%;
+        height: 1.3em;
+        border-radius: 1em;
+        background-color: var(--clr-icons);
+        padding: 3px 3px;
+    }
+
+    .storage--slider{
+        height: 100%;
+        background: var(--clr-slider-bg);
+        width: 82.5%;
+        border-radius: 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 2px;
+
+    }
+    .storage--slider div{
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    .storage--slider-txt{
+        color: #000;
+        font-weight: 700;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .storage--status-out{
+        width: fit-content;
+        background-color: #fff;
+        position: absolute;
+        top: -3em;
+        left: 23.5em;
+        /* color: #000; */
+        padding: 1em;
+        border-radius: 0.7rem 0.7rem  0 0.7rem;
+    }
+    .storage--status-out p {
+        color: var(--clr-neutral-txt);
+        text-transform:uppercase;
+        font-weight: 700;
+    }
+    .storage--status-out p::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        border-top: 25px solid #fff;
+        border-left: 25px solid transparent;
+        bottom: -1.3em;
+        right: 0;
+
+    }
+    .storage--status-out span{
+        font-size: 2em;
+        color: #000;
+    }
+    footer{ 
+        position: absolute;
+        bottom: 1em;
+        padding: 0.5em 1em;
+        border-radius: 0.4em;
+        /* background-color: #ced4da; */
+    }
+
+    @media (max-width:60em) {
+        .fylo--card{
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+
+        }
+        
+    }
+
+    @media (max-width:37em) {
+        .fylo--card{
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+
+        }
+        .fylo--upload-section{
+            width: 100%;
+
+        }
+        .fylo--status-section{
+        border-radius: 0.7em 0.7em 5.5em  0.7em;
+
+            width: 100%;
+        }
+        .storage--status-out p::after {
+            content: none;}
+        
+        .storage--status-out{
+            width: fit-content;
+            background-color: #fff;
+            position: absolute;
+            top: 8em;
+            left: 27.5%;
+             /* color: #000; */
+            padding: 0.5em 1em;
+            border-radius: 0.7rem ;
+            }
+    }
